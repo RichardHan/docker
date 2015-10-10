@@ -46,7 +46,7 @@ RUN cat /usr/src/php/php.ini-development | sed 's/^;\(date.timezone.*\)/\1 \"Asi
 
 COPY docker-entrypoint.sh /entrypoint.sh
 
-RUN chmod +x ./entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
