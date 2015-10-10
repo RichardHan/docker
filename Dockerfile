@@ -45,6 +45,9 @@ RUN curl -sS https://getcomposer.org/installer | php \
 RUN cat /usr/src/php/php.ini-development | sed 's/^;\(date.timezone.*\)/\1 \"Asia\/Shanghai\"/' > /usr/local/etc/php/php.ini
 
 COPY docker-entrypoint.sh /entrypoint.sh
+
+chmod +x ./entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["apache2-foreground"]
